@@ -247,6 +247,7 @@ class EventSubWSClient:
             else:  # there are no sockets, create one and break
                 s = Websocket(self.client, self._http)
                 await s.connect()
+                self._sockets.append(s)
 
                 s.add_subscription(sub)
                 return
