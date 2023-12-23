@@ -241,7 +241,7 @@ class EventSubWSClient:
                 await self._create_and_connect_socket()
                 s = self._sockets[-1]
 
-            s.wait_and_subscribe(sub)
+            await s.wait_and_subscribe(sub)
 
             assert sub.created is not None
 
